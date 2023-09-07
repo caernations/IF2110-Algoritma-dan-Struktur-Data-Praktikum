@@ -220,8 +220,6 @@ DATETIME DATETIMEPrevNDetik(DATETIME D, int N)
 }
 
 long int DATETIMEDurasi(DATETIME DAw, DATETIME DAkh)
-/* Mengirim DAkh-DAw dlm Detik, dengan kalkulasi */
-/* Prekondisi: DAkh > DAw */
 {
     return TIMEToDetik(Time(DAkh)) - TIMEToDetik(Time(DAw));
 }
