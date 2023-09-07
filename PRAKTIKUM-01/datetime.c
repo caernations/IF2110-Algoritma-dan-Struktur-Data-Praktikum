@@ -141,31 +141,82 @@ boolean DGT(DATETIME D1, DATETIME D2)
     return (!DLT(D1, D2) && !DEQ(D1, D2));
 }
 
+
 DATETIME DATETIMENextNDetik(DATETIME D, int N)
-/* Mengirim salinan D dengan detik ditambah N */
 {
-    DATETIME D1;
-    int detik = TIMEToDetik(Time(D)) + N;
-    if (detik >= 86400) {
-        detik = detik % 86400;
+    int DD = Day(D);
+    int MM = Month(D);
+    int YYYY = Year(D);
+    int hh = Hour(Time(D));
+    int mm = Minute(Time(D));
+    int ss = Second(Time(D));
+
+    ss += N;
+
+    while (ss > 59) 
+    {
+        ss -= 60;
+        mm++;
+        if (mm > 59) {
+            mm -= 60;
+            hh++;
+            if (hh > 23) {
+                hh -= 24;
+                DD++;
+                if (DD > GetMaxDay(MM, YYYY)) {
+                    DD -= GetMaxDay(MM, YYYY);
+                    MM++;
+                    if (MM > 12) {
+                        MM -= 12;
+                        YYYY++;
+                    }
+                }
+            }
+        }
     }
-    D1 = D;
-    Time(D1) = DetikToTIME(detik);
-    return D1;
+
+    DATETIME D2;
+    CreateDATETIME(&D2, DD, MM, YYYY, hh, mm, ss);
+    return D2;
 }
 
+
 DATETIME DATETIMEPrevNDetik(DATETIME D, int N)
-/* Mengirim salinan D dengan detik dikurang N */
-/* *** Kelompok Operator Aritmetika terhadap DATETIME *** */
 {
-    DATETIME D1;
-    int detik = TIMEToDetik(Time(D)) - N;
-    if (detik < 0) {
-        detik = 86400 + detik;
+    int DD = Day(D);
+    int MM = Month(D);
+    int YYYY = Year(D);
+    int hh = Hour(Time(D));
+    int mm = Minute(Time(D));
+    int ss = Second(Time(D));
+
+    ss -= N;
+
+    while (ss < 0) 
+    {
+        ss += 60;
+        mm--;
+        if (mm < 0) {
+            mm += 60;
+            hh--;
+            if (hh < 0) {
+                hh += 24;
+                DD--;
+                if (DD < 1) {
+                    MM--;
+                    if (MM < 1) {
+                        MM += 12;
+                        YYYY--;
+                    }
+                    DD += GetMaxDay(MM, YYYY);
+                }
+            }
+        }
     }
-    D1 = D;
-    Time(D1) = DetikToTIME(detik);
-    return D1;
+    
+    DATETIME D2;
+    CreateDATETIME(&D2, DD, MM, YYYY, hh, mm, ss);
+    return D2;
 }
 
 long int DATETIMEDurasi(DATETIME DAw, DATETIME DAkh)
