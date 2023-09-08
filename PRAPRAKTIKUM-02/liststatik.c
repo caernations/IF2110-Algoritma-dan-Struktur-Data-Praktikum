@@ -78,7 +78,7 @@ void readList(ListStatik *l)
     CreateListStatik(l);
     scanf("%d", &n);
 
-    while ((n < 0) || (n > CAPACITY)) 
+    while (n < 0 || n > CAPACITY) 
     {
         scanf(" %d", &n);
     }
@@ -128,21 +128,21 @@ ListStatik plusMinusList(ListStatik l1, ListStatik l2, boolean plus)
 boolean isListEqual(ListStatik l1, ListStatik l2)
 {
 
-    boolean sameLength = true;
+    boolean equal = true;
     int i = 0;
 
     if (listLength(l1) != listLength(l2)) {
-        sameLength = false;
+        equal = false;
     } else {
-        while (sameLength && i < listLength(l1)) {
+        while (equal && i < listLength(l1)) {
             if (ELMT(l1, i) != ELMT(l2, i)) {
-                sameLength = false;
+                equal = false;
             }
             i++;
         }
     }
 
-    return sameLength;
+    return equal;
 }
 
 
