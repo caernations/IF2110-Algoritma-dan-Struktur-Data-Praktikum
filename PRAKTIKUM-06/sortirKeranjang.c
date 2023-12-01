@@ -28,10 +28,9 @@ void SortirKeranjang(Stack *S1, Stack *S2)
                 Pop(&TempStack, &Y); 
                 Push(S1, Y); 
             }
-            Push(&TempStack, X);
+            Push(&TempStack, X); 
         }
     }
-
 
     while (!IsEmpty(TempStack))
     {
