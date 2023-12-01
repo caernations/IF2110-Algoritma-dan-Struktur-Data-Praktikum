@@ -1,6 +1,6 @@
 // Nama : Yasmin Farisah Salma
 // NIM  : 13522140
-// Praktikum 1 Algoritma dan Struktur Data
+// Praktikum 2 Algoritma dan Struktur Data
 
 
 #include <stdio.h>

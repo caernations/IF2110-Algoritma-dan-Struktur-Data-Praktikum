@@ -9,25 +9,25 @@
 
 
 int main() {
-    ListStatik arr1, arr2, mergedArr;
+    ListStatik array1, array2, arrayMerged;
 
-    readList(&arr1);
+    readList(&array1);
 
-    readList(&arr2);
+    readList(&array2);
     int i, j;
-    CreateListStatik(&mergedArr);
+    CreateListStatik(&arrayMerged);
 
-    for (i = getFirstIdx(arr1); i <= getLastIdx(arr1); i++) {
-        insertLast(&mergedArr, ELMT(arr1, i));
+    for (i = getFirstIdx(array1); i <= getLastIdx(array1); i++) {
+        insertLast(&arrayMerged, ELMT(array1, i));
     }
 
-    for (j = getFirstIdx(arr2); j <= getLastIdx(arr2); j++) {
-        insertLast(&mergedArr, ELMT(arr2, j));
+    for (j = getFirstIdx(array2); j <= getLastIdx(array2); j++) {
+        insertLast(&arrayMerged, ELMT(array2, j));
     }
 
-    sortList(&mergedArr, true);
+    sortList(&arrayMerged, true);
 
-    printList(mergedArr);
+    printList(arrayMerged);
     printf("\n");
 
     return 0;
