@@ -3,54 +3,50 @@
 // Praktikum 3 Algoritma dan Struktur Data
 
 #include <stdio.h>
-#include <stdlib.h>
-#include "boolean.h"
 #include "listdin.h"
 
 
 int main()
 {
-    ListDin L;
-    int query;
-    int type;
-    
-    CreateListDin(&L, 0);
-    scanf("%d", &query);
+    ListDin l1;
+    int tipe, i, Q;
+    CreateListDin(&l1, 0);
 
-    for (int i = 0; i < query; i++)
+    scanf("%d", &Q);
+
+    for (i = 0; i < Q; i++)
     {
-        scanf("%d", &type);
-        if (type == 1)
+        scanf("%d",&tipe);
+        if(tipe == 1)
         {
             int x;
             scanf("%d", &x);
-            if (CAPACITY(L) == 0)
+            if (isEmpty(l1))
             {
-                expandList(&L, 1);
+                expandList(&l1, 1);
             }
-            else if (isFull(L))
+            else if (isFull(l1))
             {
-                expandList(&L, (CAPACITY(L) * 2) - CAPACITY(L));
+                expandList(&l1, CAPACITY(l1));
             }
-            insertLast(&L, x);
+            insertLast(&l1, x);
+
         }
-        else if (type == 2)
+        else if(tipe == 2)
         {
-            ElType temp;
-            deleteLast(&L, &temp);
-            int kapasitas = CAPACITY(L) / 2;
-            if (listLength(L) <= CAPACITY(L) / 2)
+            int temp;
+            deleteLast(&l1, &temp);
+            if (NEFF(l1) <= (CAPACITY(l1) / 2))
             {
-                shrinkList(&L, kapasitas);
+                CAPACITY(l1) = CAPACITY(l1) / 2;
             }
         }
-        else if (type == 3)
+        
+        else
         {
-            printf("%d ", CAPACITY(L));
-            printList(L);
+            printf("%d ", CAPACITY(l1));
+            printList(l1);
             printf("\n");
         }
     }
-
-    return 0;
 }
