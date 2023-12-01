@@ -1,3 +1,8 @@
+// Nama : Yasmin Farisah Salma
+// NIM  : 13522140
+// Praktikum 4 Algoritma dan Struktur Data
+
+
 #include <stdio.h>
 #include "boolean.h"
 #include "matrix.h"

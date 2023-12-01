@@ -1,9 +1,11 @@
+// Nama : Yasmin Farisah Salma
+// NIM  : 13522140
+// Praktikum 4 Algoritma dan Struktur Data
+
+
 #include <stdio.h>
 #include "boolean.h"
 #include "matrix.h"
-
-
-
 
 void createMatrix(int nRows, int nCols, Matrix *m)
 /* Membentuk sebuah Matrix "kosong" yang siap diisi berukuran nRow x nCol di "ujung kiri" memori */

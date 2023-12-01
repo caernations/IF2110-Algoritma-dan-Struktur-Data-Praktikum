@@ -1,3 +1,8 @@
+// Nama : Yasmin Farisah Salma
+// NIM  : 13522140
+// Praktikum 4 Algoritma dan Struktur Data
+
+
 #include <stdio.h>
 #include "boolean.h" 
 #include "matrix.h" 
@@ -17,7 +22,7 @@ int main()
     int A, B;
     Matrix potonganPuzzle;
 
-    boolean canSolve = true; 
+    boolean canBeSolved = true; 
     for (int k = 0; k < K; k++) 
     {
         scanf("%d %d", &A, &B);
@@ -50,12 +55,12 @@ int main()
 
         if (!found) 
         {
-            canSolve = false;
+            canBeSolved = false;
             break;
         }
     }
 
-    if (canSolve) 
+    if (canBeSolved) 
     {
         printf("Puzzle dapat diselesaikan.\n");
     } 
