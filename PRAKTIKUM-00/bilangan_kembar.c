@@ -23,6 +23,11 @@ CONTOH:
 
 #include <stdio.h>
 
+#define boolean unsigned char
+#define true 1
+#define false 0
+
+
 int isTwin(int num) 
 {
     int lastDigit = num % 10;
@@ -30,25 +35,23 @@ int isTwin(int num)
     {
         if (num % 10 != lastDigit) 
         {
-            return 0;
+            return false;
         }
         num /= 10;
     }
-    return 1;
+    return true;
 }
 
-int main() 
-{
-    int a, b;
+int main() {
+    int a, b, i;
+    int count = 0;
     scanf("%d", &a);
     scanf(" %d", &b);
 
-    int count = 0;
-    for (int i = a; i <= b; i++) 
+    for (i = a + 1; i < b; i++) 
     {
-
-        if (isTwin(i)) {
-
+        if (isTwin(i) == true) 
+        {
             count++;
         }
     }
