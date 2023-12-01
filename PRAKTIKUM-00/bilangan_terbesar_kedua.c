@@ -27,20 +27,25 @@ https://www.programiz.com/c-programming/online-compiler/#google_vignette
 
 #include <stdio.h>
 
-int main() {
+int main() 
+{
     int max1, max2 = -9999999; 
     int num, i, n;
 
     scanf("%d", &n);
     
-    for (i = 0 ; i < n ; i++){
+    for (i = 0 ; i < n ; i++)
+    {
 
         scanf("%d", &num);
         
-        if (num > max1) {
+        if (num > max1) 
+        {
             max2 = max1;
             max1 = num;
-        } else if (num > max2 && num < max1) {
+            
+        } else if (num > max2 && num < max1) 
+        {
             max2 = num;
         }
     }

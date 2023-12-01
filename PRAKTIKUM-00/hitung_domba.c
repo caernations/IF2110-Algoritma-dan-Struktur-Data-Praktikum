@@ -27,16 +27,20 @@ happy
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
     int m, n, i;
 
     scanf("%d\n", &m);
     scanf(" %d", &n);
 
-    for (i = 0 ; i < m ; i++){
-        if (((i + 1) % n) == 0){
+    for (i = 0 ; i < m ; i++)
+    {
+        if (((i + 1) % n) == 0)
+        {
             printf("%s\n", "happy");
-        } else{
+        } else
+        {
             printf("%d\n", (i + 1));
         }
     }

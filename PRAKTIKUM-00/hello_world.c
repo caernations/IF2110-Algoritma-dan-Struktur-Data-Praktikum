@@ -11,7 +11,8 @@ Jangan lupa memberikan enter di akhir teks.
 
 #include <stdio.h>
 
-int main(){
+int main()
+{
     printf("Hello, World!\n");
 
     return 0;

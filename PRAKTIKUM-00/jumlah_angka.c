@@ -20,20 +20,22 @@ CONTOH:
 
 #include <stdio.h>
 
-int main() {
-    int num, originalNum, remainder, sum = 0;
+int main() 
+{
+    int num, number, remainder, jumlahDigit = 0;
 
     scanf("%d", &num);
 
-    originalNum = num;
+    number = num;
 
-    while (num > 0) {
+    while (num > 0) 
+    {
         remainder = num % 10;
-        sum += remainder;
+        jumlahDigit += remainder;
         num /= 10;
     }
 
-    printf("%d\n", sum);
+    printf("%d\n", jumlahDigit);
 
     return 0;
 }

@@ -23,10 +23,13 @@ CONTOH:
 
 #include <stdio.h>
 
-int isTwin(int num) {
-    int lastdigit = num % 10;
-    while (num > 0) {
-        if (num % 10 != lastdigit) {
+int isTwin(int num) 
+{
+    int lastDigit = num % 10;
+    while (num > 0) 
+    {
+        if (num % 10 != lastDigit) 
+        {
             return 0;
         }
         num /= 10;
@@ -34,14 +37,18 @@ int isTwin(int num) {
     return 1;
 }
 
-int main() {
+int main() 
+{
     int a, b;
     scanf("%d", &a);
     scanf(" %d", &b);
 
     int count = 0;
-    for (int i = a; i <= b; i++) {
+    for (int i = a; i <= b; i++) 
+    {
+
         if (isTwin(i)) {
+
             count++;
         }
     }
