@@ -81,6 +81,12 @@ float JarakGARIS(GARIS L, POINT P) {
     return (a * Absis(P) + b * Ordinat(P) + c) / sqrt(a * a + b * b);
 }
 
-boolean IsPointMemenuhiGaris(GARIS L, POINT P) {
-    return (Ordinat(PAwal(L)) - Ordinat(PAkhir(L)) * Absis(P) + Absis(PAwal(L)) * Ordinat(PAkhir(L)) - Absis(PAkhir(L)) * Ordinat(PAwal(L)), 0);
+boolean IsPointMemenuhiGaris (GARIS L, POINT P) {
+	float a = Gradien(L), b = -1, c = (Ordinat(PAwal(L)) - Gradien(L)*Absis(PAwal(L)));	
+	if (a * Absis(P) + b * Ordinat(P) + c == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

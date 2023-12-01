@@ -7,6 +7,7 @@
 #include <math.h>
 #include "boolean.h"
 #include "garis.h"
+#include "point.h"
 
 
 float distance (GARIS L, POINT P) 
@@ -29,16 +30,16 @@ float distance (GARIS L, POINT P)
 int main () 
 {
 	float b;
-	int i, jlh_sheep, count = 0;
+	int i, jumlahSheep, count = 0;
 	GARIS wolf;
 	POINT sheep;
 
 	scanf("%f", &b);
 	scanf(" %f %f", &Absis(PAwal(wolf)), &Ordinat(PAwal(wolf)));
 	scanf(" %f %f", &Absis(PAkhir(wolf)), &Ordinat(PAkhir(wolf)));	
-	scanf(" %d", &jlh_sheep);
+	scanf(" %d", &jumlahSheep);
 
-	for (i = 0; i < jlh_sheep; i++) 
+	for (i = 0; i < jumlahSheep; i++) 
     {
 		scanf(" %f %f", &Absis(sheep), &Ordinat(sheep));
 		if (distance(wolf, sheep) <= b) 

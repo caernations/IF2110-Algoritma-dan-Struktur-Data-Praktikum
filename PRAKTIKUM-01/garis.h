@@ -1,5 +1,5 @@
 /* File: garis.h */
-/* Tanggal: 3 September 2022 */
+/* Tanggal: 1 September 2023 */
 /* Definisi ADT GARIS, menggunakan ADT point */
 #ifndef GARIS_H
 #define GARIS_H
@@ -59,6 +59,10 @@ float Gradien (GARIS L);
 /* Mengembalikan Gradien (m) dari L */
 /* Gradien garis yang melalui (x1,y1) dan (x2,y2) adalah: (y2-y1)/(x2-x1) */
 /* Prekondisi : x1 != x2 */
+void GeserGARIS (GARIS * L, float deltaX, float deltaY);
+/* I.S. L terdefinisi */
+/* F.S. L digeser sebesar deltaX ke arah sumbu X dan sebesar deltaY ke arah sumbu Y */
+/* Proses : PAw dan PAkh digeser. */
 
 /* *** Kelompok predikat *** */
 boolean IsTegakLurus (GARIS L1, GARIS L2);
@@ -73,11 +77,10 @@ float JarakGARIS (GARIS L, POINT P);
 /* Menghasilkan jarak terdekat antara titik P dan garis L */
 /* Bentuklah persamaan dari garis L menjadi ax + by + c = 0 */
 /* Jarak terdekat dari titik P ke garis L dapat didefinisikan sebagai d = |a * x + b * y + c| / akar kuadrat dari a * a + b * b */
+
 boolean IsPointMemenuhiGaris (GARIS L, POINT P);
 /* Menghasilkan true jika  titik P terletak di garis L */
 /* Bentuklah persamaan dari garis L menjadi ax + by + c = 0 */
 /* Titik P terletak di garis L jika dan hanya jika P memenuhi persamaan garis L, yaitu ax + by + c = 0 */
 
 #endif
-
-

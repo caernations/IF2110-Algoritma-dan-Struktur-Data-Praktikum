@@ -193,10 +193,3 @@ void PersamaanLinearDuaVariabel (POINT P1, POINT P2)
 	int b = Ordinat(P1) - m * Absis(P1);
 	printf("(%d,%d)", m, b);
 }
-
-int main(){
-	POINT P;
-	BacaPOINT(&P);
-	TulisPOINT(P);
-	return 0;
-}
